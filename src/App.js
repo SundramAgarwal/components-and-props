@@ -33,6 +33,14 @@ const cardData = [
     called: "30k",
     messaged: "20k",
     shared: "10k"
+  },
+  {
+    id: 2,
+    name: "Er Sonu Shukla",
+    designation: "Software Developer",
+    called: "50k",
+    messaged: "89k",
+    shared: "12k"
   }
 ]
 
@@ -40,7 +48,9 @@ const App = () => {
   return (
     <>
       {/* <HandlingEvent/> */}
-      <Card data = {cardData[0]}/>
+      {cardData.map((data) => (
+        <Card key={data.id} data = {data}/>
+      ))}
     </>
   )
 }
