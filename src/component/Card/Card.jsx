@@ -6,7 +6,7 @@ const Card = (props) => {
   console.log(props.data.name);
   return (
     <>
-      <section className="card container">
+      <section className="container">
         <div className="upper">
           <div className="img-container">
             <div className="img-body"></div>
@@ -29,22 +29,22 @@ const Card = (props) => {
               <i className="fa-brands fa-youtube"></i>
             </a>
           </section>
-          <section className="contact">
-            <button className="call btn">Call</button>
-            <button className="msg btn">Message</button>
+          <section className="row w-75 justify-content-evenly">
+            <button className="btn btn-primary rounded d-flex align-items-center justify-content-center">Call</button>
+            <button className="btn btn-primary rounded d-flex align-items-center justify-content-center">Message</button>
           </section>
-          <section className="status">
-            <div>
+          <section className="row row-cols-3">
+            <div className="col d-flex align-items-center gap-2">
               <i className="fa-solid fa-phone"></i>
-              <p>{props.data.called}</p>
+              <span>{props.data.called}</span>
             </div>
-            <div>
+            <div className="col d-flex align-items-center gap-2">
               <i className="fa-solid fa-message"></i>
-              <p>{props.data.messaged}</p>
+              <span>{props.data.messaged}</span>
             </div>
-            <div>
+            <div className="col d-flex align-items-center gap-2">
               <i className="fa-solid fa-share"></i>
-              <p>{props.data.shared}</p>
+              <span>{props.data.shared}</span>
             </div>
           </section>
         </div>

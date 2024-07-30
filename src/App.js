@@ -21,8 +21,9 @@
 
 // export default App;
 
-import React from 'react'
-import Card from './component/Card/Card'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Card from "./component/Card/Card";
 // import HandlingEvent from './HandlingEvent'
 
 const cardData = [
@@ -32,7 +33,7 @@ const cardData = [
     designation: "Software Engineer",
     called: "30k",
     messaged: "20k",
-    shared: "10k"
+    shared: "10k",
   },
   {
     id: 2,
@@ -40,19 +41,21 @@ const cardData = [
     designation: "Software Developer",
     called: "50k",
     messaged: "89k",
-    shared: "12k"
-  }
-]
+    shared: "12k",
+  },
+];
 
 const App = () => {
   return (
     <>
       {/* <HandlingEvent/> */}
-      {cardData.map((data) => (
-        <Card key={data.id} data = {data}/>
-      ))}
+      <div className="d-flex">
+        {cardData.map((data) => (
+          <Card key={data.id} data={data} />
+        ))}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
