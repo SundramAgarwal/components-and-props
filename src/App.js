@@ -21,39 +21,45 @@
 
 // export default App;
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from "react";
-import Card from "./component/Card/Card";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import CenterMode from "./component/Slider/CenterMode";
+import { FadeLoader, ClipLoader } from "react-spinners";
+import { Audio } from "react-loader-spinner";
 // import HandlingEvent from './HandlingEvent'
 
-const cardData = [
-  {
-    id: 1,
-    name: "Er Sundram Agarwal",
-    designation: "Software Engineer",
-    called: "30k",
-    messaged: "20k",
-    shared: "10k",
-  },
-  {
-    id: 2,
-    name: "Er Sonu Shukla",
-    designation: "Software Developer",
-    called: "50k",
-    messaged: "89k",
-    shared: "12k",
-  },
-];
-
 const App = () => {
+  const [show, setShow] = useState(false);
+  const handleButtonClick = () => {
+    setShow(!show);
+  };
   return (
     <>
       {/* <HandlingEvent/> */}
-      <div className="d-flex">
-        {cardData.map((data) => (
-          <Card key={data.id} data={data} />
-        ))}
-      </div>
+      <button
+        onClick={handleButtonClick}
+        className="btn btn-primary text-center w-auto h-auto align-content-center"
+      >
+        {show ? "Click Here to Hide" : "Click Here To show"}
+      </button>
+
+      <Audio
+        height="80"
+        width="80"
+        radius="9"
+        color="green"
+        ariaLabel="loading"
+        wrapperStyle
+        wrapperClass
+      />
+      <ClipLoader
+        color="#f21717"
+        loading
+        size={66}
+        speedMultiplier={2}
+      />
+      <FadeLoader />
+      {show ? <CenterMode /> : null}
     </>
   );
 };

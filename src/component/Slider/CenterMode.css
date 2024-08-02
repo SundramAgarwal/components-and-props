@@ -1,0 +1,41 @@
+.slider-container.container-fluid {
+  width: 96%;
+  height: auto;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  color: rgb(156, 149, 149);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (min-width: 769px) {
+  .left-arrow,
+  .right-arrow {
+    bottom: 50%;
+  }
+
+  .left-arrow {
+    left: -1.5%;
+  }
+  .right-arrow {
+    right: -1.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-arrow,
+  .right-arrow {
+    bottom: -11%;
+    left: 47%;
+  }
+
+  .right-arrow {
+    left: 52%;
+  }
+}
